@@ -1,0 +1,1723 @@
+/* Сайт sushi */
+
+/*@font-face {
+	font-weight: 100 900;
+	font-family: 'Raleway';
+	font-style: normal;
+	src: url('/fls/raleway-100-900-cyrillic.woff2') format('woff2');
+	unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}*/
+
+/*@font-face {
+	font-weight: 100 900;
+	font-family: 'Raleway';
+	font-style: normal;
+	src: url('/fls/raleway-100-900-latin.woff2') format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}*/
+
+/*@font-face {
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 100 900;
+	src: url(/fls/raleway-100-900-cyrillic-ext.woff2) format('woff2');
+	unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+} cyrillic-ext */
+
+/*@font-face {
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 100 900;
+	src: url(/fls/raleway-100-900-latin-ext.woff2) format('woff2');
+	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+} latin-ext */
+
+:root {
+	--font-family: 'Raleway', 'Montserrat', 'Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'Liberation Sans', 'IBM Plex Sans', 'Jost', sans-serif;/* font-family для обычного текста */
+	--font-family-heading: 'Raleway', 'Montserrat', 'Gang of Three', 'Montserrat', 'Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Jost', 'Futura', 'IBM Plex Sans', 'Helvetica Neue', 'Arial', 'Noto Sans', sans-serif;/* font-family для заголовков */
+	--font-size-l: 18px;
+	--font-size-m: 15px;
+	--font-size-s: 13px;
+	--font-weight-xl: 740;/* толщина жирного текста, обычно 700 (заголовки, жирный текст) */
+	--font-weight-l: 620;/* толщина чуть жирнее базового, обычно 500 (менюшки, кнопки, отдельные слова) */
+	--font-weight-m: 500;/* толщина базового текста, обычно 400 (обычный наборный текст) */
+	--line-height-m: 1.5;/* базовый текст body, у оригинала был 1.17 */
+	--line-height-s: 1.2;/* уменьшенный */
+	--container-padding: 10px;/* боковые отступы у контейнеров */
+	--margin-xl: 84px;/* отступ большой (между секциями), 88px у донора */
+	--margin-l: 50px;/* отступ большой (между секциями), 88px у донора */
+	--margin-m: 20px;/* отступ средний (по краям секций?), 40px? у донора */
+	--margin-s: 10px;/* отступ маленький (между карточками, менюшками), 16px у донора */
+	--margin-xs: 6px;/* отступ маленький (между карточками, менюшками), ?px у донора */
+
+	--color: hsl(0, 0%, 0%);/* базовый цвет текста ("чёрный" для светлой темы и наоборот). Раньше было --color: hsl(0, 0%, 0%); Примеры: hsl(var(--color)), hsl(var(--color) / 0.65) */
+	--bg: hsl(0, 0%, 100%);/* базовый цвет фона ("белый" для светлой темы и наоборот) */
+	--grey: hsl(0, 0%, 46%);/* серый цвет (для серого текста) */
+	--grey-light: hsl(0, 0%, 88%);/* светло-серый цвет (для лёгкого оформления) */
+	--color-1: hsl(166, 93%, 27%);/* у донора-дизайнера hsl(100, 61%, 27%); главный цвет (для акцента на важных элементах) */
+	--color-2: hsl(16, 86%, 52%);/* coral = hsl(16, 100%, 66%), у донора hsl(21, 96%, 44%) */
+	--color-3: hsl(40, 82%, 94%);/* фон хедера и футера */
+	--color-green: hsl(139, 100%, 19%);/* зелёный цвет (для текста). В бутстрапе hsl(152, 69%, 31%) */
+	--color-red: hsl(2, 100%, 28%);/* красный цвет (для текста). В бутстрапе hsl(354, 70%, 54%) */
+
+	--border: 0.5px solid var(--color-grey);/* лёгкая рамка (для карточек, разделов) */
+	--border-2: 0.5px solid hsl(197, 10%, 14%);/* лёгкая рамка (для карточек, разделов) */
+	--border-radius: 8px;/* базовое скругление углов (для карточек) */
+	--shadow: 0 1px 2px hsla(166, 87%, 9%, 0.03), 0 2px 8px hsla(166, 87%, 9%, 0.12);/* базовая тень (для карточек, блоков, картинок) */
+	--shadow-2: 0 1px 2px hsla(166, 87%, 9%, 0.02), 0 4px 11px hsla(166, 87%, 9%, 0.09);/* базовая тень (для карточек, блоков, картинок) */
+	/*--shadow: 0px 3px 15px rgba(0, 84, 82, 0.25); тень у донора-дизайнера */
+	tab-size: 2;/* стоит в modern-normalize */
+}/* Это CSS-переменные: .h1 {color: var(--color);} */
+
+.theme-2 {
+	--color-1: hsl(36, 79%, 30%);/* у донора-дизайнера hsl(100, 61%, 27%); главный цвет (для акцента на важных элементах) */
+	--color-2: hsl(16, 86%, 52%);/* coral = hsl(16, 100%, 66%), у донора hsl(21, 96%, 44%) */
+	--color-3: hsl(40, 82%, 94%);/* фон хедера и футера */
+}
+
+@media (min-width: 398px) {
+	:root {
+		--container-padding: 14px;
+		--font-size-l: 19px;
+		--font-size-m: 16px;
+		--font-size-s: 14px;
+		--margin-xl: 96px;
+		--margin-l: 58px;
+		--margin-m: 26px;
+		--margin-s: 14px;
+		--margin-xs: 8px;
+	}
+}
+
+@media (min-width: 576px) {
+	:root {
+		--container-padding: 30px;
+		--font-size-l: 20px;
+		--font-size-m: 17px;
+		--font-size-s: 14px;
+		--margin-xl: 108px;
+		--margin-l: 68px;
+		--margin-m: 30px;
+		--margin-s: 16px;
+		--margin-xs: 9px;
+	}
+}
+
+@media (min-width: 992px) {
+	:root {
+		--container-padding: 50px;/* боковые отступы у контейнеров */
+		--font-size-l: 21px;
+		--font-size-m: 18px;
+		--font-size-s: 15px;
+		--margin-xl: 120px;
+		--margin-l: 80px;
+		--margin-m: 36px;
+		--margin-s: 20px;
+		--margin-xs: 11px;
+	}
+}
+
+*,
+::after,
+::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+
+	/*outline: 1px solid hsla(0, 100%, 50%, 0.3);
+	outline-offset: 0; это для тестирования границ элементов (переполнение) */
+}
+
+*:focus {
+	outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;/* это для плавного скролла по якорям, только если в браузере не стоит предпочтения убирать анимации */
+	}
+}
+
+body {
+	min-height: 100vh;
+	font: 500 var(--font-size-m, 15px)/var(--line-height-m, 1.5) var(--font-family, sans-serif);
+	color: var(--color, hsl(0, 0%, 0%));
+	background-color: var(--bg, hsl(0, 0%, 100%));
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: hsla(0, 0%, 0%, 0);/* эти оба свойства из бутстрапа */
+	font-variant-numeric: lining-nums;
+	font-feature-settings: 'lnum' 1;/* это убирает прыгающие цифры у шрифта Raleway */
+}
+
+.theme-2 body {
+	background-color: var(--color-3);
+}
+
+/* Ниже даны стандартные настройки для заголовков сайта. Они будут работать по тегу без добавления класса, а также и по аналогичному классу (можно добавить для любого элемента). Например можно применять конструкции типа <h1 class="h3"> */
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	font-weight: var(--font-weight-l, 500);
+	/*font-family: var(--font-family-heading, sans-serif);*/
+	line-height: var(--line-height-s, 1.2);
+	color: var(--color-1);
+}
+
+h1,
+.h1 {
+	margin-bottom: 1em;/* было 10px; */
+	font-size: calc(22px + 1.5vw);/* или 27rem в бутстрап calc(22px + 1.5vw), max 40px */
+	/*text-align: center;*/
+}
+
+@media (min-width: 1024px) {
+	h1,
+	.h1 {
+		margin-bottom: 12px;
+		font-size: 34px;
+	}
+}
+
+h2,
+.h2 {
+	margin-bottom: 0.8em;
+	font-size: calc(21px + 0.8vw);/* или 24rem в бутстрап calc(21.2px + 0.9vw), max 32px */
+	/*text-align: center;*/
+}
+
+h3,
+.h3 {
+	margin-bottom: 1em;/* было 18px; */
+	font-size: calc(20px + 0.6vw);/* или 21rem в бутстрап calc(20.8px + 0.6vw), max 28px */
+}
+
+h4,
+.h4 {
+	margin-bottom: 1em;
+	font-size: calc(20.4px + 0.3vw);/* в бутстрап calc(20.4px + 0.3vw), max 24px */
+}
+
+/* Ниже описаны размеры и цвета для базового текста: */
+
+p:not([class]) /*p:not(:last-of-type)*/,
+.p {
+	margin-bottom: 1em;/* или лучше var(--font-size-m)? */
+}/* нужно записать селектор так, чтобы он был максимально практичным */
+
+.font-l {
+	font-size: var(--font-size-l, 16px);
+	line-height: var(--line-height-m, 1.5);
+}/* это класс для большого текста */
+
+.font-m {
+	font-size: var(--font-size-m, 14px);
+	line-height: var(--line-height-m, 1.5);
+}/* это класс для среднего текста */
+
+.font-s {
+	font-size: var(--font-size-s, 12px);
+	line-height: var(--line-height-s, 1.2);
+}/* это класс для маленького текста */
+
+b,
+strong,
+.b,
+.bold,
+.font-b {
+	font-weight: 700;/* или 600; */
+}/* это класс для жирного текста (bold) */
+
+i,
+.i {
+	font-style: oblique;/*italic*/
+}
+
+.g,
+.grey,
+.font-g {
+	color: var(--color-grey);/* было var(--black-transparent); */
+}/* это класс для серого текста (второстепенного) */
+
+.green {
+	color: var(--color-green);
+}/* это класс для зелёного текста (успех) */
+
+.red {
+	color: var(--color-red);
+}/* это класс для красного текста (ошибка) */
+
+.yellow {
+	color: var(--color-yellow);
+}/* это класс для жёлтого текста (предупреждение) */
+
+a,
+button,
+input,
+textarea,
+summary,
+optgroup,
+select,
+svg {
+	font: inherit;
+	color: inherit;
+	/*text-decoration: none; эксперимент, чтобы не писать отдельно для ссылки */
+	touch-action: manipulation;/* или pan-x pan-y pinch-zoom; это убирает задержку ≈300мс после клика на тачскринах (ожидание дабл клика), но имеет такой минус, что элемент остаётся подсвеченным при возвращении на страницу, например кнопка меню после нажатия так и остаётся с синим фоном и это очень мешает. С этим свойством ещё нужно разбираться.
+	Чтобы убрать синее подсвечивание - нужно элементу вернуть значение touch-action: auto; */
+}/* сюда нужно собрать все интерактивные теги-элементы, на которые можно нажимать и у которых настройки текста не наследуются */
+
+a {
+	text-decoration: none;
+	color: inherit;
+	transition: 0.3s;
+}
+
+a:not([class]):hover,
+.link:hover {
+	color: var(--color-1);
+}
+
+/*a:visited {
+	color: initial;
+}*/
+
+ul:not([class]),
+ol:not([class]),
+.list {
+	margin: 0 0 1em;/* или margin-bottom: var(--font-size-m) */
+	padding: 0 0 0 20px;/* думаю лучше не задавать отступ в em, иначе будут криво равняться li с разными размерами шрифтов */
+}/* это класс для стандартного вида списков ul/ol */
+
+ul[class],
+ol[class] {
+	list-style: none;
+}
+
+/*ul:not([class]) {
+	list-style-type: square;
+} это изменение маркера на квадратики */
+
+ul:not([class]) li:not([class]),
+ol:not([class]) li:not([class]),
+dl:not([class]) dd:not([class]) {
+	/*list-style-type:"⚠"; пример изменения вида маркеров */
+	margin-bottom: 0.1em;/* или 0.5em */
+}
+
+hr,
+.hr {
+	border: 0;
+	border-bottom: 1px solid var(--color-grey);
+}
+
+abbr[title] {
+	text-decoration: underline dotted;
+	/*cursor: help; этот курсор бывает закрывает первую букву во всплывашке */
+	text-decoration-skip-ink: none;/* указывает чтобы подчёркивания не обрывались если наезжают на букву */
+}
+
+sub,
+sup {
+	position: relative;
+	font-size: 0.75em;
+	line-height: 0;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+svg {
+	display: block;/* это вроде также избавляет от непонятного отступа снизу */
+	/*line-height: 0; это вроде также избавляет от непонятного отступа снизу */
+	shape-rendering: geometricprecision;/* это чтобы SVG рендерились со сглаживанием. auto | optimizeSpeed | crispEdges для чётких пиксельных линий без сглаживания | geometricPrecision | inherit */
+	/*fill: currentColor; или var(--color) или inherit */
+	/*stroke: currentColor; или var(--color) или inherit */
+}
+
+img {
+	display: block;/* это избавляет от пустой строки под картинкой, равной line-height. У этого способа есть минус когда нам не нужно чтобы картинка была блочной. Ещё один способ - это задать родителю картинки display: flex; и line-height: 0; ? */
+	max-width: 100%;/* или width: 100%; */
+	height: auto;/* или max-height: 100%; */
+	object-fit: contain;
+	/*line-height: 0; это вроде также избавляет от непонятного отступа снизу */
+	/*background-color: hsl(0, 0%, 85%);*/
+	/*content-visibility: auto; это чтобы браузер не тратил ресурсы на картинку, пока не получит её (полностью?) */
+	/*image-rendering: pixelated; убирает сглаживание растровых картинок при масштабировании, делая чёткие пиксельные картинки */
+}
+
+figure {
+	width: fit-content;
+	margin: var(--font-size-m, 16px) auto 30px;
+}
+
+figcaption {
+	margin-top: 0.6em;
+	font-size: var(--font-size-s, 14px);
+	text-align: center;
+	color: var(--color-grey);/* было var(--black-transparent); */
+}
+
+/*-------------------------------------------------
+----- Ниже настройки основных блоков страниц: -----
+-------------------------------------------------*/
+
+/*.main {
+	padding-top: 78px; это отступ между хедером и хлебными крошками
+}*/
+
+.section {
+	margin-bottom: var(--margin-xl);
+	/*padding-top: var(--margin-l, 88px);
+	padding-bottom: var(--margin-l, 88px);*/
+}
+
+.container {
+	padding-left: max(calc(50% - 1140px / 2), var(--container-padding, 14px));
+	padding-right: max(calc(50% - 1140px / 2), var(--container-padding, 14px));
+}
+
+.mb-xl {
+	margin-bottom: var(--margin-xl, 112px);
+}
+
+.mb-l {
+	margin-bottom: var(--margin-l, 56px);
+}
+
+.mb-m {
+	margin-bottom: var(--margin-m, 28px);
+}
+
+.mb-s {
+	margin-bottom: var(--margin-s, 14px);
+}
+
+.mb-xs {
+	margin-bottom: var(--margin-xs, 8px);
+}
+
+noscript {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding: 4px 0;
+	font: 400 14px/1.1 monospace;
+	text-align: center;
+	color: var(--color-red, red);
+	background: hsl(0, 0%, 100%);
+	/*border: 1px solid var(--color-red, red);*/
+}
+
+
+/*---------------------------------------------------------
+------------------- Хедер и меню: -------------------------
+---------------------------------------------------------*/
+
+.header {
+	/*position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1030;*/
+	width: 100%;
+	min-height: 60px;
+	/*color: var(--color-1);*/
+	background-color: var(--color-3);
+}
+
+.header-grid {
+	display: grid;
+	align-items: center;
+	padding: 14px 0;
+}
+
+@media (max-width: 1023.99px) {
+	.header-grid {
+		grid: min-content min-content / 1fr min-content min-content;/*было grid-template-columns: 1fr auto;*/
+		/*padding: 12px 0; это было в старом коде, убрал для пробы! */
+	}
+}
+
+@media (min-width: 1024px) {
+	.header-grid {
+		grid: min-content / min-content 1fr;
+		gap: var(--margin-m);/*40px;*/
+	}
+}
+
+.header-brand {
+	display: grid;
+	grid-template-columns: min-content max-content;
+	align-items: center;
+	gap: 8px;
+	/*width: 136px; 7ch */
+	font: 800 34px/1 var(--font-family-heading);
+	text-transform: uppercase;
+	/*text-align: center;
+	vertical-align: middle;*/
+	color: var(--color-1);
+	transition: 0.25s;
+}
+
+.header-brand::before {
+	content: '';
+	display: block;
+	width: 28px;
+	height: 28px;
+	background-image: url('/img/works/sushi/site/sprite.svg#logo');
+	/*background: red url('/img/works/sushi/site/sprite.svg#logo') 50% / 100% no-repeat;*/
+}
+
+.header-brand:hover {
+	color: var(--color-2);
+}
+
+/* Код для раскрытия-появления области меню: */
+
+@media (max-width: 1023.98px) {
+	.navbar-collapse {
+		grid-area: 2 / 1 / 3 / 4;
+		place-self: center;
+		/*display: grid;
+		grid-template-columns: min-content;
+		place-items: center;
+		align-content: center; зачем это было? не помню */
+
+		/*gap: var(--margin-s);*/
+		/*height: 0; старое! это скрывает меню! У FilamentGroup было max-height: 0; */
+		/*opacity: 0; старое! это для анимации раскрытия, скрывает меню! */
+		/*overflow: hidden; это было у доноров, но оно обрезает фокус у менюшек. Можно вернуть если вокруг менюшек добавить отступы */
+		/*will-change: height; это экспериментальное свойство, оно оповещает браузер что будет смещение объекта, у FilamentGroup */
+		/*transition: height .6s, opacity .4s; было transition: max-height .2s ease-out; у FilamentGroup */
+		/*background: content-box hsla(106, 100%, 45%, 0.05);
+		outline: 2px dashed hsla(106, 100%, 45%, 0.4); это для тестирования */
+	}
+}
+
+@media (min-width: 1024px) {
+	.navbar-collapse {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+/* Скрытие меню когда оно не открыто скриптом (.show): */
+
+@media (max-width: 1023.98px) {
+	.collapse:not(.show) {
+		display: none;
+	}
+}
+
+/* Анимация раскрытия/закрытия меню.
+Класс .collapsing добавляет скрипт к .navbar-collapse
+Видимо это базовый стиль при использовании скрипта collapse */
+
+.collapsing {
+	height: 0;
+	/*opacity: 0;*/
+	overflow: hidden;
+	transition: height 0.5s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.collapsing {
+		transition: none;
+	}
+}
+
+.navbar-nav {
+	/*list-style: none;*/
+	/*display: grid;
+	grid-template-columns: min-content;
+	place-items: center;
+	align-content: center; это старый код */
+	display: grid;
+	grid: auto / max-content max-content;
+	place-items: center;
+	/*align-items: center;*/
+	gap: var(--margin-m);
+
+	/*background: content-box hsla(106, 100%, 45%, 0.05);
+	outline: 2px dashed hsla(106, 100%, 45%, 0.4); это для тестирования */
+}
+
+@media (max-width: 1023.98px) {
+	.navbar-nav {
+		grid: auto auto / 1fr;
+		padding: 40px 0;
+	}
+}
+
+.nav-link {
+	/*display: inline-block;*/
+	padding: 8px 0;
+	font-weight: var(--font-weight-l);
+	font-size: 20px;
+	transition: 0.3s;
+}
+
+/*.nav-link[aria-current='page'] {
+	font-weight: 700;
+}*/
+
+.nav-link:hover,
+.nav-link:focus,
+.header-contacts a:hover,
+.header-contacts a:focus {
+	color: var(--color-2);
+	/*border-color: var(--color-1);*/
+}
+
+@media (min-width: 1024px) {
+	.nav-link {
+		/*padding: 6px 4px;*/
+		font-size: var(--font-size-m);
+		/*border: 1px solid transparent;*/
+	}
+}
+
+@media (max-width: 1023.98px) {
+	.header-contacts {
+		padding: 0 0 28px;
+	}
+
+	.header-contacts p {
+		display: block;
+		text-align: center;
+	}
+}
+
+@media (min-width: 1024px) {
+	.header-contacts {
+		display: grid;
+		grid-template-columns: max-content max-content;
+		align-items: center;
+		gap: 30px;
+	}
+
+	.header-contacts > p {
+		margin: 0;
+	}
+
+	.header-contacts > p:nth-of-type(1) {
+		margin: 0;
+		font-size: var(--font-size-s);
+		text-align: center;
+	}
+}
+
+.icon {
+	position: relative;
+	/*display: inline-block;*/
+	display: grid;
+	place-items: center;
+	width: 36px;
+	height: 36px;
+	background-color: transparent;
+	border-radius: 22px;
+	transition: 0.2s 0.1s;
+}
+
+.icon svg {
+	width: 22px;
+	height: 22px;
+	color: var(--color-1);
+	/*fill: var(--color-1);
+	stroke: var(--color-1);*/
+}
+
+/* Это всплывашка-тег-пузырь с текстом:
+.icon::before {
+	position: absolute;
+	top: -2px;
+	right: 1px;
+	width: 16px;
+	height: 16px;
+	overflow: hidden;
+	font-size: 11px;
+	line-height: 1.455;
+	text-align: center;
+	background-color: var(--color-1, hsl(42, 98%, 53%));
+	border-radius: 50%;
+}
+
+.icon-cart::before {
+	content: '3';
+}*/
+
+.dialog-open {
+	font: 500 14px/var(--line-height-s, 1.2) var(--font-family);
+	background: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.theme-btn {
+	display: inline-block;
+	min-width: 24px;
+	min-height: 24px;
+	/*margin: 0 0 40px;*/
+	padding: 6px 11px;
+	font-weight: var(--font-weight-m, 500);
+	font-size: var(--font-size-s, 14px);
+	line-height: var(--line-height-s, 1.2);
+	text-align: center;
+	text-transform: uppercase;
+	color: var(--color, black);
+	background-color: transparent;
+	border: 1px solid var(--color, black);
+	border-radius: var(--border-radius);
+	cursor: pointer;
+	transition: 0.3s 0.1s;
+	-webkit-appearance: none;
+	appearance: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.theme-btn:hover {
+	color: var(--color-2);
+	border-color: var(--color-2);
+	transition: 0.3s;
+}
+
+/* Внешний вид кнопки меню: */
+
+.navbar-toggler {
+	position: relative;
+	/*z-index: 1; это надо или нет? */
+	/*display: inline-block;  это вроде у button по умолчанию?! */
+	width: 44px;
+	height: 44px;
+	margin-right: -9px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;/* или 0; или transparent; ? *//*transparent;*//*  или rgba(0,0,0,0); это вообще убирает синий фон в хроме при нажатии на кнопку! */
+	/*touch-action: auto; это возвращает стандартное поведение, что синий фон появляется только на полсекунды при клике и исчезает, но на мобилках возвращается задержка 300мс после клика */
+}
+
+@media (min-width: 1024px) {
+	.navbar-toggler {
+		display: none;
+	}
+}
+
+/*.navbar-toggler:focus {
+	outline: 0;
+} это было на Веб-стандартах. Вероятно мне нужно создать альтернативу аутлайну, так как могут быть сценарии где будет бургер-меню при работе с клавиатуры */
+
+.navbar-toggler-line,
+.navbar-toggler-line::after,
+.navbar-toggler-line::before {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 22px;
+	height: 2px;
+	background: var(--color-1, hsl(0, 0%, 0%));
+	border-radius: 9px;
+}
+
+.navbar-toggler-line {
+	top: 50%;
+	left: 11px;
+	transform: translateY(-50%);/* это для смещения элемента на пол его высоты, в сочетании с top:50% это располагает элемент ровно по центру родителя */
+	transition: transform 0.3s linear;
+}
+
+.navbar-toggler-line::before {
+	top: -7px;
+	/*left: 0;*/
+	transition: top 0.3s 0.2s linear;
+}
+
+.navbar-toggler-line::after {
+	bottom: -7px;
+	/*left: 0;*/
+	transition: bottom 0.3s 0.2s linear, transform 0.3s linear;
+}
+
+/* Ниже анимация бургера при клике: */
+
+.navbar-toggler[aria-expanded='true'] .navbar-toggler-line {
+	transform: rotate(45deg);
+	transition: transform 0.3s 0.2s linear;
+}
+
+.navbar-toggler[aria-expanded='true'] .navbar-toggler-line::before {
+	top: 0;
+	opacity: 0;
+	transition: top 0.3s linear, opacity 0.3s 0.2s linear;
+}
+
+.navbar-toggler[aria-expanded='true'] .navbar-toggler-line::after {
+	bottom: 0;
+	transform: rotate(90deg);/* или простое (-90deg) */
+	transition: bottom 0.3s linear, transform 0.3s 0.2s linear;
+}
+
+
+
+
+/*-------------------------------------------------
+----- 1) Главная страница сайта (Main Page) -------
+-------------------------------------------------*/
+
+/*------ Строка с меню товаров: ------------*/
+
+.menu-block {
+	position: sticky;
+	top: 0;
+	z-index: 1020;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: var(--margin-s);
+	padding-top: var(--margin-s);
+	padding-bottom: calc(var(--margin-s) - 3px);
+	background-color: var(--bg);
+	box-shadow: 0 6px 6px hsla(166, 87%, 9%, 0.08);/* было var(--shadow-2); */
+}
+
+.menu-grid {
+	display: grid;
+	justify-items: center;
+	grid-template-columns: repeat(6, auto);
+	gap: 3vw;/* было var(--margin-s, 16px); */
+}
+
+.menu-link {
+	display: block;
+	font-size: var(--font-size-s);
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	transition: 0.4s;
+}
+
+.menu-link svg {
+	display: block;
+	width: 32px;
+	height: 32px;
+	margin: 0 auto;
+	color: var(--color-1);
+	transition: 0.4s;
+	/*opacity: 0.7;*/
+	/*background: url(/img/works/sushi/site/site/logo.svg) 50%/32px no-repeat;*/
+	stroke-width: 5;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+@media (max-width: 700px) {
+	.menu-link span {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		padding: 0;
+		overflow: hidden;
+		white-space: nowrap;
+		border: 0;
+		-webkit-appearance: none;
+		appearance: none;
+		clip: rect(0 0 0 0);
+		-webkit-clip-path: inset(100%);
+		clip-path: inset(100%);
+	}
+}
+
+.menu-link:hover,
+.menu-link:hover svg {
+	color: var(--color-2);
+}
+
+/*----------- Bootstrap Scrollspy: ------------*/
+
+body {
+	position: relative;
+	overflow-y: scroll;/*overflow: auto;*/
+}
+
+.list-group-item.active svg {
+	color: var(--color-2);
+}
+
+.list-group-item.active span {
+	/*font-weight: var(--font-weight-l);*/
+	text-decoration: underline;
+	text-underline-offset: 4px;
+	color: var(--color-2);
+}
+
+
+/*-------------------------------------------------------
+----------------- Слайдер (Carousel): -------------------
+-------------------------------------------------------*/
+
+/* Оболочка всего слайдера: */
+.carousel {
+	position: relative;
+	margin-bottom: var(--margin-l);
+	/*touch-action: pan-y;*/
+}
+
+.carousel.pointer-event {
+	touch-action: pan-y;
+}
+
+/* Оболочка слайдов-карточек: */
+.carousel-inner {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	border-radius: var(--border-radius);
+}
+
+/* Это какой-то clear-фикс: */
+.carousel-inner::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+/* Механизм показа и анимации слайдов: */
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+	display: block;
+}
+
+/* эти классы подставляет скрипт для анимации: */
+.carousel-item-next:not(.carousel-item-start),
+.active.carousel-item-end {
+	transform: translateX(100%);
+}
+
+.carousel-item-prev:not(.carousel-item-end),
+.active.carousel-item-start {
+	transform: translateX(-100%);
+}
+
+/* Кнопки листания предыдущий/следующий слайд: */
+.carousel-control-prev,
+.carousel-control-next {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	z-index: 1;
+	display: grid;
+	place-items: center;
+	width: calc(32px + 5%);
+	text-align: center;
+	color: hsl(0, 0%, 100%);
+	background: none;
+	border: 0;
+	cursor: pointer;
+	opacity: 0.8;
+	transition: 0.2s ease;
+}
+
+.carousel-control-prev {
+	left: 0;
+}
+
+.carousel-control-next {
+	right: 0;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-prev:focus,
+.carousel-control-next:hover,
+.carousel-control-next:focus {
+	/*color: hsl(0, 0%, 100%);
+	text-decoration: none;*/
+	outline: 0;
+	opacity: 1;/* было 0.9; */
+}
+
+/* Ниже мой код с добавлением кружков для стрелок: */
+.carousel-control-prev::after,
+.carousel-control-next::after {
+	content: '';
+	position: absolute;
+	/*z-index: -1;*/
+	width: 48px;
+	height: 48px;
+	background: padding-box var(--color-1) url('/img/works/sushi/site/sprite.svg#arrow-simple') 50% / 24px 24px no-repeat;
+	/*background-color: var(--color-1);*/
+	border-radius: 99px;
+	transform: rotate(90deg);
+	opacity: 0.8;
+	transition: 0.2s;
+}
+
+.carousel-control-next::after {
+	transform: rotate(-90deg);
+}
+
+/* Пагинация слайдов (Bullets): */
+.carousel-indicators {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+	display: flex;
+	justify-content: center;
+	margin-right: 15%;
+	margin-bottom: 7px;
+	margin-left: 15%;
+	list-style: none;
+	transition: 0.3s;
+}
+
+.carousel-indicators [data-bs-target] {
+	flex: 0 1 auto;
+	box-sizing: content-box;
+	width: 30px;
+	height: 5px;
+	margin-right: 3px;
+	margin-left: 3px;
+	text-indent: -999px;
+	background-color: hsl(0, 0%, 100%);
+	background-clip: padding-box;
+	border: 6px solid transparent;
+	border-radius: 9px;
+	cursor: pointer;
+	/*background-clip: content-box; было padding-box; у донора */
+	/*border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;*/
+	opacity: 0.7;
+	transition: opacity 0.5s ease;/* было hsl(166, 43%, 66%);*/
+}
+
+/*@media (prefers-reduced-motion: no-preference) {
+	.carousel-indicators [data-bs-target] {
+		transition: opacity 0.6s ease;
+	}
+}*/
+
+.carousel-indicators .active {
+	/*background-color: var(--color-1);*/
+	transform: scale(1.4);
+	opacity: 1;
+}
+
+.carousel-indicators [data-bs-target]:hover {
+	opacity: 1;
+	/*background-color: var(--color-1);*/
+}
+
+
+/* Слайд-карточка: */
+.carousel-item {
+	position: relative;
+	display: none;
+	float: left;
+	width: 100%;
+	height: 300px;
+	max-height: 600px;
+	margin-right: -100%;
+	backface-visibility: hidden;
+	transition: transform 0.6s ease-in-out;
+}
+
+@media (min-width: 1024px) {
+	.carousel-item {
+		height: 400px;
+	}
+}
+
+/* Внутренний контент слайдов: */
+
+.carousel-item > * {
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+	height: 100%;
+	/*height: 512px;*/
+	object-fit: cover;
+	/*background-color: hsl(157, 84%, 80%);*/
+}
+
+.carousel-content,
+.carousel-content-2 {
+	/*z-index: 10; это чтобы текст слайдов был позиционирован выше основной картинки */
+	display: grid;
+	place-items: end center;
+	place-content: end center;
+	padding-bottom: 80px;
+	/*display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 24px;*/
+	/*padding-top: 18px;
+	padding-bottom: 18px;*/
+	/*color: #fff;*/
+	/*text-align: center;*/
+}
+
+.carousel-content {
+	color: white;
+}
+
+.carousel-content-title {
+	margin-bottom: 20px;
+	font-weight: 700;
+	font-size: clamp(18px, calc(16px + 3vw), 50px);
+	line-height: 1.2;
+}
+
+.carousel-content-p {
+	font-size: clamp(16px, calc(14px + 1vw), 26px);
+}
+
+.carousel-content-2 {
+	place-items: end start;
+	padding-bottom: 30px;
+	padding-left: 20px;
+	place-content: end start;
+}
+
+@media (min-width: 768px) {
+	.carousel-content-2 {
+		place-items: center start;
+		padding-bottom: 0;
+		padding-left: 120px;
+		place-content: center start;
+	}
+}
+
+.slide-2,
+.slide-3 {
+	object-position: 100% 0%;
+}
+
+@media (min-width: 768px) {
+	.slide-2,
+	.slide-3 {
+		object-position: 50% 0%;
+	}
+}
+/*.slide-1 {
+	background: linear-gradient(104deg, hsl(60, 0%, 100%) 0%, hsl(54, 100%, 92%) 100%);
+}*/
+
+/*.slide-2 {
+	background: linear-gradient(104deg, hsl(55, 79%, 91%) 0%, hsl(33, 93%, 83%) 100%);
+}*/
+
+/*.slide-3 {
+	background: linear-gradient(104deg, hsl(190, 83%, 93%) 0%, hsl(290, 82%, 85%) 100%);
+}*/
+
+/*-------- Конец стилей слайдера Carousel -------*/
+
+
+
+
+
+
+.anchor {
+	position: relative;
+	top: -120px;
+	display: block;
+}
+
+/*------ Галерея с карточками товаров: -----*/
+
+.card-grid {
+	display: grid;
+	justify-items: center;
+	grid-template-columns: repeat(auto-fill, minmax(164px, 1fr));
+	gap: var(--margin-s, 14px);
+	margin-bottom: var(--margin-l);
+}
+
+@media (min-width: 520px) {
+	.card-grid {
+		grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+	}
+}
+
+.card {
+	position: relative;
+	display: grid;
+	grid-template-rows: 130px auto auto auto 1fr;
+	gap: 5px;
+	width: 100%;
+	min-width: 110px;
+	max-width: 400px;
+	padding: var(--margin-s);
+	background-color: var(--bg);
+	border-radius: var(--border-radius);
+	box-shadow: var(--shadow);
+	transition: 0.3s;/*width: 288px; у донора было 288px *//* чисто для профилактики *//* чисто для профилактики */
+}
+
+@media (min-width: 576px) {
+	.card {
+		grid-template-rows: 170px auto auto auto 1fr;
+		gap: 7px;
+		min-width: 220px;
+		text-transform: none;
+	}
+}
+
+.theme-2 .card {
+	box-shadow: none;
+}
+
+.card:hover {
+	box-shadow: var(--shadow-2);
+	transform: translateY(-2px);
+}
+
+.theme-2 .card:hover {
+	box-shadow: none;
+	transform: none;
+}
+
+.card-img {
+	grid-area: 1 / 1 / 2 / 2;
+	width: 100%;
+	height: 100%;
+	max-height: 200px;/* это для профилактики гридовой высоты в 170px */
+}
+
+.card-title {
+	/*max-height: calc(1em * var(--line-height-s, 1.2)); это чтобы лишний текст вне элемента скрывался */
+	/*white-space: nowrap; это чтобы текст не переносился на вторую строку */
+	margin: 0;
+	/*color: var(--color-1);*/
+	overflow: hidden;
+	font-weight: var(--font-weight-l, 500);
+	font-size: var(--font-size-m, 16px);
+	line-height: var(--line-height-s, 1.2);
+	white-space: nowrap;
+	text-overflow: ellipsis;/* это чтобы текст скрывался за тремя точками */
+}
+
+.card-description {
+	max-height: calc(2em * var(--line-height-s, 1.2));
+	overflow: hidden;
+	font-size: var(--font-size-s);
+	line-height: var(--line-height-s);
+	color: var(--grey);/* это чтобы лишний текст вне элемента скрывался */
+	/*white-space: nowrap;
+	text-overflow: ellipsis; это чтобы текст скрывался за тремя точками */
+}
+
+.card-feature {
+	overflow: hidden;
+	/*max-height: calc(1em * var(--line-height-s, 1.2)); это чтобы лишний текст вне элемента скрывался */
+	font-size: var(--font-size-s);
+	line-height: var(--line-height-s);
+	white-space: nowrap;
+	color: var(--grey);
+}
+
+.card-buy {
+	align-self: end;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 1px;
+}
+
+.card-buy-price {
+	font-weight: var(--font-weight-l);
+	font-size: var(--font-size-l);
+}
+
+/* Это для старой зачёркнутой цены:
+.card-buy-price::after {
+	position: relative;
+	top: -.4em;
+	margin-left: 8px;
+	font-weight: 400;
+	font-size: 14px;
+	text-decoration: line-through;
+	color: var(--color-1);
+}
+
+.cbp-680::after {
+	content: '$680';
+}*/
+
+/* Теги-уведомления на карточках товаров: */
+
+.card::before,
+.card::after {
+	content: '';
+	position: absolute;
+	top: var(--margin-s);
+	left: var(--margin-s);
+	display: grid;
+	place-content: center;
+	width: 36px;
+	height: 36px;
+	font-weight: 600;
+	font-size: 13px;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	color: white;
+	border-radius: 99px;
+}
+
+.card::after {
+	left: calc(var(--margin-s) + 29px);
+}
+
+.new::before,
+.new-2::after {
+	content: 'new';
+	background-color: hsl(120, 86%, 32%);
+}
+
+.hit::before,
+.hit-2::after {
+	content: 'hit';
+	background-color: hsl(300, 60%, 47%);
+}
+
+.discount::before,
+.discount-2::after {
+	content: '%';
+	font-size: 20px;
+	background-color: hsl(46, 90%, 52%);
+}
+
+.spicy::before,
+.spicy-2::after {
+	background: hsl(350, 86%, 62%) url('/img/works/sushi/site/sprite.svg#pepper') 50% / 24px no-repeat;
+}
+
+.vegan::before,
+.vegan-2::after {
+	background: hsl(170, 91%, 45%) url('/img/works/sushi/site/sprite.svg#vegan') 50% / 24px no-repeat;
+}
+
+
+/* Конец стилей карточки */
+
+
+
+
+
+.button {
+	display: inline-block;
+	min-width: 40px;
+	min-height: 24px;
+	/*margin: 0 0 40px;*/
+	padding: 8px 14px;
+	font-weight: var(--font-weight-m, 500);
+	font-size: var(--font-size-s, 14px);
+	line-height: var(--line-height-s, 1.2);
+	text-align: center;
+	text-transform: uppercase;
+	color: var(--bg, white);
+	background-color: var(--color-1, green);
+	border: 1px solid var(--color-1, green);
+	border-radius: var(--border-radius);
+	cursor: pointer;
+	transition: 0.2s;
+	-webkit-appearance: none;
+	appearance: none;
+	stroke-width: 0.8;
+	-webkit-tap-highlight-color: transparent;
+}
+
+@media (min-width: 576px) {
+	.button {
+		min-width: 60px;
+		min-height: 32px;
+		padding: 9px 22px;
+	}
+}
+
+.button:hover {
+	background-color: var(--color-2);
+	border-color: var(--color-2);
+	/*box-shadow: var(--shadow);*/
+	/*transform: translateY(-2px);*/
+	/*filter: brightness(130%);*/
+}
+
+.button:active {
+	filter: brightness(85%);
+}/* эта анимация при нажатии почти незаметна или не работает, можно удалить?! */
+
+.btn-center {
+	/*display: flex;
+	margin-left: auto;
+	margin-right: auto; такой вариант центрирования работает только на <button> */
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+
+
+
+
+
+/*---------------------------------------
+------------- Раздел О нас: -------------
+---------------------------------------*/
+
+.about-grid {
+	margin-bottom: var(--margin-l);
+}
+
+@media (min-width: 768px) {
+	.about-grid {
+		display: grid;
+		grid-template-columns: 3fr 2fr;
+		gap: var(--margin-m);
+	}
+
+	.about-grid img {
+		grid-area: 1 / 1 / 2 / 2;
+		width: 100%;
+	}
+}
+
+
+
+
+
+
+
+
+
+/*---------------------------------------
+----- Раздел Контакты и доставка: -------
+---------------------------------------*/
+
+.contacts-grid {
+	margin-bottom: var(--margin-l);
+}
+
+@media (min-width: 768px) {
+	.contacts-grid {
+		display: grid;
+		grid-template-columns: 2fr 3fr;
+		gap: var(--margin-m);
+	}
+
+	.contacts-wrap p {
+		max-width: 420px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------------------------------
+---------------- Футер: ------------------
+----------------------------------------*/
+
+.footer {
+	padding-top: 32px;
+	padding-bottom: 32px;
+	/*color: var(--color-1);*/
+	background-color: var(--color-3);
+}
+
+.footer-grid {
+	display: grid;
+	justify-items: start;
+	justify-content: start;
+	gap: var(--margin-s);
+	margin-bottom: 32px;
+}
+
+@media (min-width: 1024px) {
+	.footer-grid {
+		grid-template-columns: max-content max-content max-content min-content;
+		justify-content: space-between;
+		align-items: start;
+		gap: var(--margin-m);
+	}
+}
+
+.footer-address {
+	text-align: right;
+}
+
+
+
+
+
+/* Модал с JS Bootstrap Modal: */
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1055;
+	display: none;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;/* эти два оверфлоу на случай если в модале много контента (больше чем помещается на страницу) и для беспроблемной анимации */
+	outline: 0;
+}
+
+.modal-dialog {
+	position: relative;
+	display: grid;/* это для расположения модала по центру */
+	place-items: center;
+	width: auto;
+	min-height: calc(100% - 28px);
+	margin: 14px;/* это отступы модала до краёв экрана на мобилках! */
+	pointer-events: none;
+}
+
+@media (min-width: 576px) {
+	.modal-dialog {
+		max-width: 500px;
+		min-height: calc(100% - 56px);/* это ставится когда модал расположен по центру окна */
+		margin: 28px auto;/* это отступы если располагать модал сверху экрана, а не по середине */
+	}
+}
+
+/* Анимация проявления модала: */
+
+@media (prefers-reduced-motion: no-preference) {
+	.fade {
+		transition: opacity 0.2s linear;
+	}
+}
+
+.fade:not(.show) {
+	opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.modal-dialog {
+		transform: scale(0.8);/*или translate(0, -30px); или другие анимации! */
+		transition: transform 0.3s ease-out;
+	}
+}
+
+/* этот класс добавляется скриптом для анимации проявления окна: */
+
+.modal.show .modal-dialog {
+	transform: none;
+}
+
+/* этот класс добавляется скриптом когда кликаешь по оверлею в режиме статичного фона: */
+
+.modal.modal-static .modal-dialog {
+	transform: scale(1.02);
+}
+
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1050;
+	width: 100vw;
+	height: 100vh;
+	background-color: hsl(0, 0%, 0%);
+}
+
+.modal-backdrop.fade {
+	opacity: 0;
+}
+
+.modal-backdrop.show {
+	opacity: 0.5;
+}
+
+
+/* Оформление внутреннего контента модала: */
+
+.modal-content {
+	position: relative;
+	/*z-index: 7;*/
+	width: 100%;
+	max-width: 800px;
+	max-height: 100vh;
+	padding: var(--margin-m) var(--margin-s);
+	overflow-y: auto;
+	background-color: var(--bg, hsl(0, 0%, 100%));
+	background-clip: padding-box;
+	border-radius: var(--border-radius);
+	outline: 0;
+	pointer-events: auto;
+	overscroll-behavior-y: contain;/* или 90% *//* это убирает цепочку прокрутки у body! */
+}
+
+@media (min-width: 1024px) {
+	.modal-content {
+		padding: 40px 60px 44px;
+	}
+}
+
+.modal-content h3 {
+	text-align: center;
+}
+
+.modal-close {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	/*display: grid;
+	place-items: center;
+	display: block;
+	margin-left: auto; это другой способ расположить крестик справа */
+	width: 44px;
+	height: 44px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	appearance: none;
+}/* можно эту кнопку не позиционировать, а задать размер и сместить вправо */
+
+.modal-close::before,
+.modal-close::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	display: block;
+	width: 22px;
+	height: 2px;
+	background-color: var(--color);
+}
+
+.modal-close::before {
+	transform: translateX(-50%) rotate(45deg);
+}
+
+.modal-close::after {
+	transform: translateX(-50%) rotate(-45deg);
+}
+
+.modal-content .form {
+	margin: 0 auto;
+}
+
+
+
+
+
+/* Кнопка "Наверх" №1: */
+
+.to-top {
+	position: fixed;
+	right: 14px;
+	bottom: 14px;
+	z-index: 1030;
+	display: grid;
+	place-items: center;
+	width: 50px;
+	height: 50px;
+	/*background-color: var(--color-1);*/
+	background: padding-box var(--color-1) url('/img/works/sushi/site/sprite.svg#arrow-simple') 50% / 24px 24px no-repeat;
+	border: none;
+	border-radius: 99px;
+	visibility: hidden;
+	cursor: pointer;
+	transform: translateY(100px);
+	opacity: 0;
+}
+
+@media (min-width: 1560px) {
+	.to-top {
+		right: 9%;
+		bottom: 60px;
+	}
+}
+
+.to-top-active {
+	visibility: visible;
+	transform: translateY(0) rotate(180deg);
+	opacity: 0.5;
+	transition: 0.2s;/* почему-то идёт мигание эффекта, не смог найти причину - поэтому убрал транзишн вообще */
+}
+
+.to-top-active:hover {
+	opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+/*----------------------------------------------------------*/
+
+.vh {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	border: 0;
+	-webkit-appearance: none;
+	appearance: none;
+	clip: rect(0 0 0 0);
+	-webkit-clip-path: inset(100%);
+	clip-path: inset(100%);/*clip: rect(1px, 1px, 1px, 1px);*//*clip-path: inset(0px 0px 99.9% 99.9%);*/
+}/* Это код для визуально-скрытых (visually-hidden) элементов html */
+
+/*-----------------------------------------------------------------
+---- Адаптивные версии сайта (adaptive versions, mobile first) ----
+-- Сайт первоначально разработан для мобильных экранов до 575px ---
+-----------------------------------------------------------------*/
+
+/* @media (min-width: 576px) {} или @media (width > 575px) {} */
+
+/* @media (min-width: 1024px) {} или @media (width > 1023px) {} */
+
+/* @media (min-width: 2500px) {} или @media (width > 2500px) {} */
+
+/* Ниже полное отключение анимаций на сайте если включена настройка prefers-reduced-motion: reduce: */
+
+@media (prefers-reduced-motion: reduce) /*(prefers-reduced-motion)*/ {
+	* {
+		transition: none !important;
+		animation: none !important;
+		scroll-behavior: auto !important;/*animation-name: dissolve !important;*//* или transition-duration: .05s; *//* сбрасывает плавный скролл по якорям */
+	}
+}/* Лучше эту настройку убрать и гасить каждую опасную анимацию индивидуально в коде */
