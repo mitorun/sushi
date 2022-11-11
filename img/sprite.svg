@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="currentcolor">
+<defs><style>:root svg:not(:target){display:none}</style></defs>
+
+
+<svg id="arrow-simple" viewBox="0 0 8 8" fill="none" stroke="#fff" stroke-width="1">
+	<path d="M1 3L4 6L7 3" stroke-linecap="round" stroke-linejoin="round"/>
+	<!--<path d="M1 5L4 2L7 5" stroke-linecap="round" stroke-linejoin="round"/>-->
+</svg>
+
+
+<svg id="logo" viewBox="0 0 96 96" fill="#f04405">
+	<path d="M0 70v10c0 6 2 10 7 13 2 1 3 1 4-1C21 70 42 36 81 4c2-1 2-4-1-4H44l-2 1A251 251 0 0 0 0 70ZM27 0c2 0 4 2 2 4C19 17 11 29 5 41c-1 2-5 2-5-1V16C0 7 7 0 16 0h11Zm67 8c-1-2-3-2-4-1-38 30-60 63-70 85-1 2 0 4 2 4h24l2-1c11-13 26-29 46-45l2-3V16l-2-8Zm2 56c0-2-2-4-4-2-12 10-23 21-31 30-2 2 0 4 2 4h17c9 0 16-7 16-16V64Z"/>
+</svg>
+
+
+<svg id="sushi" viewBox="0 0 200 200" fill="none" stroke="currentcolor">
+	<path d="m31 87-12 15c-9 15-3 28 10 30m2-45c9-10 18-17 29-22M31 87c23 7 32 19 28 33m1-55c22-9 43-9 61-5m-61 5c32 13 38 31 27 47m34-52c17 5 29 10 41 20m-41-20c21 27 25 42 11 56m30-36c12 10 18 16 22 24 5 13 2 26-12 28m-10-52c13 28 10 42-7 45m17 7c-7 0-17-7-17-7m17 7c4 15-3 22-16 23H45c-13-1-19-10-16-23m126-7-23-9m0 0c-16-5-30-6-45-4m0 0-28 8m0 0c-11 6-21 13-30 12m42-4h14m-36 15h12m26-2h28m-11-18h14m15 22h15"/>
+</svg>
+
+
+<svg id="rolls" viewBox="0 0 200 200" fill="none" stroke="currentcolor">
+	<path id="a" d="M45 50c-4-5-12-5-16 0-5 4-5 12 0 16m16-16c5 4 5 12 0 16-4 5-12 5-16 0m16-16L29 66M9 53l23-23c3-2 7-2 10 0l23 23c2 3 2 7 0 10L42 86c-3 2-7 2-10 0L9 63c-2-3-2-7 0-10Z"/>
+	<path id="b" d="M100 93c-5-5-15-5-21 0-5 6-5 16 0 22m22-22c5 6 5 16 0 22-6 5-16 5-22 0m22-22-22 22m-2-7 17-17m-8 26 17-17m-43-2 24-24c3-4 9-4 12 0l24 24c4 3 4 9 0 12l-24 24c-3 4-9 4-12 0l-24-24c-4-3-4-9 0-12Z"/>
+	<use href="#a" transform="translate(90 100)"/>
+	<use href="#b" transform="translate(-50 50)"/>
+	<path d="m112 8 67 167M70 16l119 124"/>
+</svg>
+
+
+<svg id="sets" viewBox="0 0 200 200" fill="none" stroke="currentcolor">
+	<path id="d" d="M33 23c-6 0-8 2-8 8s2 8 8 8 8-2 8-8-2-8-8-8Zm18 8c0-9-4-18-18-18s-18 9-18 18 3 18 18 18 18-9 18-18Z" />
+	<path id="c" d="m76 24 5 5m11-8 7 7m16-6 8 8m7 15 6 6m-12 17 6 6m-39 1 7 7M69 63l7 7m1-56h46c7 0 14 7 14 14v46c0 7-7 14-14 14H77c-7 0-14-7-14-14V28c0-7 7-14 14-14Z"/>
+	<use href="#c" transform="translate(0 90)"/>
+	<use href="#d" transform="translate(0 45)"/>
+	<use href="#d" transform="translate(0 90)"/>
+	<use href="#d" transform="translate(0 135)"/>
+	<use href="#d" transform="translate(66 22)"/>
+	<use href="#d" transform="translate(66 111)"/>
+	<use href="#d" transform="translate(134)"/>
+	<use href="#d" transform="translate(134 45)"/>
+	<use href="#d" transform="translate(134 90)"/>
+	<use href="#d" transform="translate(134 135)"/>
+</svg>
+
+
+<svg id="dishes" viewBox="0 0 200 200" fill="none" stroke="currentcolor">
+	<path d="m115 84 4-8m4 9 5-8m2 9 5-7m2 10 6-8m11-14 33-43c3-7-4-10-9-5l-32 45m8 3c20 7 36 20 38 39-2 53-48 89-92 89s-90-32-94-86c7-35 45-52 92-53 21 0 30 3 30 3m26 8-11 14m-5-20 27-49c2-7-6-10-10-5l-36 69m19-15 8 3m-8-3-10 16m18-13-11 15m-16-3s-10-2-21-2c-39 0-82 15-89 40 15 33 55 43 93 43s67-9.5 88-42c-7-21-31-30-47-34m-15-4 7 2m-35 17c14-14 33-8 53 7M88 81c-26 6-28 15-6 17m62 17c-82-18 33 36-49 25m-61-21c0-10 7-14 21-14s25 8 25 14-12 14-25 14-21-4-21-14Zm9 0c0-5 4-6 9-6s12 3 12 6-7 6-12 6-9-1-9-6Z"/>
+</svg>
+
+
+<svg id="dessert" viewBox="0 0 200 200" fill="none" stroke="currentcolor">
+	<path d="M126 69c-25 1-70 23-107 28-11 1-15 5-11 12m118-40c-3-9 2-14 14-15 12 1 43 22 54 43m-68-28c22 9 32 19 39 36m29-8c2 11-10 11-12 14-3 7 2 14 2 28 0 8-5 12-13 13l-67 2c-28 3-55 5-73 4-12-1-17-5-15-12m178-49c-12-10-24-8-29 8M16 146c2-12-2-23-8-37m8 37c16 4 39 4 64 2s56-5 69-4 16-3 17-12l-1-27M8 109c18 6 46 2 46 2 18-3 31-2 44 1s23 3 34 0 20-6 33-7"/>
+</svg>
+
+
+<svg id="drink" viewBox="0 0 200 200" fill="none" stroke="currentcolor">
+	<path d="m118 75 15-61h35V7h-41l-17 68M57 42h85c17 45 7 70-36 105v28l20 8c7 4 6 9 0 10H76c-6-1-7-6 0-10l18-8v-28C48 109 42 86 57 42Zm1 37h84c0 20-11 35-42 62-32-27-42-42-42-62Zm40 15c7 0 8 1 8 8s-1 8-8 8-8-1-8-8 1-8 8-8Z"/>
+</svg>
+
+
+<svg id="pepper" viewBox="0 0 96 96" fill="#fff">
+	<path d="m81 9 3 5c1 3 0 6-1 9-6 0-10 2-14 7s-6 14-13 25-22 20-29 22-15 1-21 0-7 3-3 7c20 17 54 6 68-5s22-30 24-37 0-13-5-17c2-4 2-8 1-12 0-3-2-7-5-9s-7 2-5 5Z"/>
+</svg>
+
+
+<svg id="vegan" viewBox="0 0 96 96" fill="#fff">
+	<path d="M30 29C25 19 14 7 6 4 4 3 4 4 5 5c15 17 21 32 25 46 5 15 7 24 10 39 1 3 1 5 3 5h4c2 0 3-1 3-4 3-23 8-41 15-54 1-2 3-1 4-2 5-1 14-3 18-10s2-13 5-22c1-2 1-2-2-2-11 4-16 3-23 6S54 20 55 31h1c4-7 8-12 12-15 6-3 6-2 3 1-13 16-18 32-25 55-1 3-1 3-2 0-4-15-8-30-14-43Z"/>
+</svg>
+
+
+</svg>
