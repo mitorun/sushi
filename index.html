@@ -8,19 +8,23 @@
 	<title>Sushi</title>
 	<meta name="description" content="Магазин вкусных суши с доставкой.">
 	<meta name="author" content="Oleg Mitorun">
-	<link rel="stylesheet" href="sushi.css">
-	<link rel="icon" type="image/svg+xml" sizes="any" href="img/favicon.svg">
+
+	<link rel="stylesheet" href="./sushi.css">
+	<link rel="icon" sizes="any" href="./favicon.ico">
+	<link rel="icon" type="image/svg+xml" href="./img/favicon.svg">
+	<link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+	<link rel="manifest" href="./manifest.json">
 	<meta name="theme-color" content="#fcf4e3">
-	<link rel="preload" as="image" href="img/sprite.svg">
-	<!--<link rel="canonical" href="https://mitorun.studio/works/sushi/site/">-->
+	<link rel="preload" as="image" href="./img/sprite.svg">
 
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="Sushi">
 	<meta property="og:description" content="Магазин вкусных суши с доставкой.">
 	<meta property="og:site_name" content="Sushi">
 	<meta property="og:locale" content="ru">
-	<meta property="og:image" content="img/about.webp">
+	<meta property="og:image" content="./img/about.webp">
 	<!--<meta property="og:url" content="https://mitorun.studio/works/sushi/site/">-->
+	<!--<link rel="canonical" href="https://mitorun.studio/works/sushi/site/">-->
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +38,7 @@
 	<header class="header container">
 
 		<div class="header-grid">
-			<a class="header-brand" href="/">Sushi</a>
+			<a class="header-brand" href="./">Sushi</a>
 
 
 			<nav class="navbar-collapse collapse" id="navbar">
@@ -83,7 +87,7 @@
 				<li class="menu">
 					<a class="menu-link list-group-item" href="#sushi">
 						<svg width="30px" height="30px" aria-hidden="true">
-							<use href="img/sprite.svg#sushi"></use>
+							<use href="./img/sprite.svg#sushi"></use>
 						</svg>
 						<span>Суши</span>
 					</a>
@@ -92,7 +96,7 @@
 				<li class="menu">
 					<a class="menu-link list-group-item" href="#rolls">
 						<svg width="30px" height="30px" aria-hidden="true">
-							<use href="img/sprite.svg#rolls"></use>
+							<use href="./img/sprite.svg#rolls"></use>
 						</svg>
 						<span>Роллы</span>
 					</a>
@@ -101,7 +105,7 @@
 				<li class="menu">
 					<a class="menu-link list-group-item" href="#sets">
 						<svg width="30px" height="30px" aria-hidden="true">
-							<use href="img/sprite.svg#sets"></use>
+							<use href="./img/sprite.svg#sets"></use>
 						</svg>
 						<span>Наборы</span>
 					</a>
@@ -110,7 +114,7 @@
 				<li class="menu">
 					<a class="menu-link list-group-item" href="#dishes">
 						<svg width="30px" height="30px" aria-hidden="true">
-							<use href="img/sprite.svg#dishes"></use>
+							<use href="./img/sprite.svg#dishes"></use>
 						</svg>
 						<span>Блюда</span>
 					</a>
@@ -119,7 +123,7 @@
 				<li class="menu">
 					<a class="menu-link list-group-item" href="#dessert">
 						<svg width="30px" height="30px" aria-hidden="true">
-							<use href="img/sprite.svg#dessert"></use>
+							<use href="./img/sprite.svg#dessert"></use>
 						</svg>
 						<span>Десерты</span>
 					</a>
@@ -128,7 +132,7 @@
 				<li class="menu">
 					<a class="menu-link list-group-item" href="#drinks">
 						<svg width="30px" height="30px" aria-hidden="true">
-							<use href="img/sprite.svg#drink"></use>
+							<use href="./img/sprite.svg#drink"></use>
 						</svg>
 						<span>Напитки</span>
 					</a>
@@ -142,7 +146,7 @@
 					<path d="M36 32V17C36 11 41 5 48 5C55 5 60 11 60 17V32M20 23H76L85 92H11L20 23Z"/>
 				</svg>
 				<!--<svg width="30px" height="30px" aria-hidden="true">
-					<use href="img/svg/sprite-sushi.svg#cart"></use>
+					<use href="./img/svg/sprite-sushi.svg#cart"></use>
 				</svg>-->
 				<span>Корзина</span>
 			</button>
@@ -150,7 +154,7 @@
 			<!--<div class="icons">
 				<a class="icon icon-cart" href="#" title="Корзина">
 					<svg width="30px" height="30px" aria-hidden="true">
-						<use href="img/sprite-sushi.svg#cart"></use>
+						<use href="./img/sprite-sushi.svg#cart"></use>
 					</svg>
 				</a>
 
@@ -159,7 +163,7 @@
 						<path d="M48 53C55.7 53 62 47 62 39C62 31 56 25 48 25C40 25 34 31 34 39C34 47 40.3 53 48 53ZM48 53C32.5 53 20 65 20 80M48 53C63.5 53 76 65 76 80M91 48C91 72 72 91 48 91C24 91 5 72 5 48C5 24 24 5 48 5C72 5 91 24 91 48Z" />
 					</svg>
 					<svg width="30px" height="30px" aria-hidden="true">
-						<use href="img/sprite-sushi.svg#account"></use>
+						<use href="./img/sprite-sushi.svg#account"></use>
 					</svg>
 				</button>
 			</div>-->
@@ -176,7 +180,7 @@
 				<div class="carousel-inner">
 					<!-- Слайд №1: -->
 					<div class="carousel-item active">
-						<img class="slide-1" width="1163" height="400" src="img/slide-1.webp" alt="">
+						<img class="slide-1" width="1163" height="400" src="./img/slide-1.webp" alt="">
 						<!--<div class="slide-1"></div>-->
 
 						<div class="carousel-content">
@@ -185,13 +189,13 @@
 							<!--<p class="carousel-content-title">Магазин вкусных и свежих японских блюд</p>
 							<p class="carousel-content-p">Этот сайт является концептом, для демонстрации примера простого интернет-магазина.</p>
 							<p class="carousel-content-p">Если хотите заказать у нас подобный, или любой другой, сайт – обращайтесь!</p>
-							<a class="button" target="_blank" href="/contacts/">Обсудить проект</a>-->
+							<a class="button" target="_blank" href="./contacts/">Обсудить проект</a>-->
 						</div>
 					</div>
 
 					<!-- Слайд №2: -->
 					<div class="carousel-item">
-						<img class="slide-2" width="1163" height="400" src="img/slide-2.webp" alt="">
+						<img class="slide-2" width="1163" height="400" src="./img/slide-2.webp" alt="">
 						<!--<div class="slide-2"></div>-->
 
 						<div class="carousel-content-2">
@@ -205,7 +209,7 @@
 
 					<!-- Слайд №3: -->
 					<div class="carousel-item">
-						<img class="slide-3" width="1163" height="400" src="img/slide-3.webp" alt="">
+						<img class="slide-3" width="1163" height="400" src="./img/slide-3.webp" alt="">
 						<!--<div class="slide-3"></div>-->
 
 						<div class="carousel-content-2">
@@ -242,7 +246,7 @@
 					<p class="card-title">Лосось</p>
 					<p class="card-description">Лосось, рис.</p>
 					<p class="card-feature">57 г.</p>
-					<img class="card-img" src="img/sushi-01.webp" alt="Суши Лосось">
+					<img class="card-img" src="./img/sushi-01.webp" alt="Суши Лосось">
 					<div class="card-buy">
 						<p class="card-buy-price">210 ₽</p>
 						<button class="button" type="button">
@@ -258,7 +262,7 @@
 					<p class="card-title">Креветка</p>
 					<p class="card-description">Креветка, рис, нори.</p>
 					<p class="card-feature">57 г.</p>
-					<img class="card-img" src="img/sushi-02.webp" alt="Суши Креветка">
+					<img class="card-img" src="./img/sushi-02.webp" alt="Суши Креветка">
 					<div class="card-buy">
 						<p class="card-buy-price">200 ₽</p>
 						<button class="button" type="button">
@@ -274,7 +278,7 @@
 					<p class="card-title">Угорь</p>
 					<p class="card-description">Угорь, рис, соус никири, нори.</p>
 					<p class="card-feature">48 г.</p>
-					<img class="card-img" src="img/sushi-03.webp" alt="Суши Угорь">
+					<img class="card-img" src="./img/sushi-03.webp" alt="Суши Угорь">
 					<div class="card-buy">
 						<p class="card-buy-price">315 ₽</p>
 						<button class="button" type="button">
@@ -290,7 +294,7 @@
 					<p class="card-title">Краб</p>
 					<p class="card-description">Краб, рис, нори.</p>
 					<p class="card-feature">37 г.</p>
-					<img class="card-img" src="img/sushi-04.webp" alt="Суши Краб">
+					<img class="card-img" src="./img/sushi-04.webp" alt="Суши Краб">
 					<div class="card-buy">
 						<p class="card-buy-price">350 ₽</p>
 						<button class="button" type="button">
@@ -315,7 +319,7 @@
 					<p class="card-title">Филадельфия классика</p>
 					<p class="card-description">Рис, лосось, творожный сыр, авокадо, нори.</p>
 					<p class="card-feature">245 г.</p>
-					<img class="card-img" src="img/roll-01.webp" alt="Ролл Филадельфия классика">
+					<img class="card-img" src="./img/roll-01.webp" alt="Ролл Филадельфия классика">
 					<div class="card-buy">
 						<p class="card-buy-price">505 ₽</p>
 						<button class="button" type="button">
@@ -331,7 +335,7 @@
 					<p class="card-title">Калифорния классика</p>
 					<p class="card-description">Рис, креветка, творожный сыр, авокадо, икра Тобико, нори.</p>
 					<p class="card-feature">250 г.</p>
-					<img class="card-img" src="img/roll-02.webp" alt="Ролл Калифорния классика">
+					<img class="card-img" src="./img/roll-02.webp" alt="Ролл Калифорния классика">
 					<div class="card-buy">
 						<p class="card-buy-price">485 ₽</p>
 						<button class="button" type="button">
@@ -347,7 +351,7 @@
 					<p class="card-title">Дракон</p>
 					<p class="card-description">Рис, угорь, творожный сыр, лосось, авокадо, соус Спайси, нори.</p>
 					<p class="card-feature">240 г.</p>
-					<img class="card-img" src="img/roll-03.webp" alt="Ролл Дракон">
+					<img class="card-img" src="./img/roll-03.webp" alt="Ролл Дракон">
 					<div class="card-buy">
 						<p class="card-buy-price">575 ₽</p>
 						<button class="button" type="button">
@@ -363,7 +367,7 @@
 					<p class="card-title">Темпура с лососем и манго</p>
 					<p class="card-description">Рис, лосось, авокадо, обжарка в сухарях, соус Манго, зелень, кунжут, нори.</p>
 					<p class="card-feature">260 г.</p>
-					<img class="card-img" src="img/roll-04.webp" alt="Ролл Темпура с лососем и манго">
+					<img class="card-img" src="./img/roll-04.webp" alt="Ролл Темпура с лососем и манго">
 					<div class="card-buy">
 						<p class="card-buy-price">525 ₽</p>
 						<button class="button" type="button">
@@ -379,7 +383,7 @@
 					<p class="card-title">Овощная свежесть</p>
 					<p class="card-description">Рис, авокадо, зелень, нори.</p>
 					<p class="card-feature">230 г.</p>
-					<img class="card-img" src="img/roll-05.webp" alt="Ролл Овощная свежесть">
+					<img class="card-img" src="./img/roll-05.webp" alt="Ролл Овощная свежесть">
 					<div class="card-buy">
 						<p class="card-buy-price">390 ₽</p>
 						<button class="button" type="button">
@@ -395,7 +399,7 @@
 					<p class="card-title">Тунец</p>
 					<p class="card-description">Рис, тунец, манго, нори.</p>
 					<p class="card-feature">240 г.</p>
-					<img class="card-img" src="img/roll-06.webp" alt="Ролл Тунец">
+					<img class="card-img" src="./img/roll-06.webp" alt="Ролл Тунец">
 					<div class="card-buy">
 						<p class="card-buy-price">520 ₽</p>
 						<button class="button" type="button">
@@ -411,7 +415,7 @@
 					<p class="card-title">Лосось</p>
 					<p class="card-description">Рис, лосось, нори.</p>
 					<p class="card-feature">240 г.</p>
-					<img class="card-img" src="img/roll-07.webp" alt="Ролл Лосось">
+					<img class="card-img" src="./img/roll-07.webp" alt="Ролл Лосось">
 					<div class="card-buy">
 						<p class="card-buy-price">500 ₽</p>
 						<button class="button" type="button">
@@ -427,7 +431,7 @@
 					<p class="card-title">Спайси с жареным беконом</p>
 					<p class="card-description">Рис, бекон, сухарики, зелень, соус Спайси, кунжут, нори.</p>
 					<p class="card-feature">260 г.</p>
-					<img class="card-img" src="img/roll-08.webp" alt="Спайси-ролл с жареным беконом">
+					<img class="card-img" src="./img/roll-08.webp" alt="Спайси-ролл с жареным беконом">
 					<div class="card-buy">
 						<p class="card-buy-price">540 ₽</p>
 						<button class="button" type="button">
@@ -452,7 +456,7 @@
 					<p class="card-title">Мини-бокс</p>
 					<p class="card-description"></p>
 					<p class="card-feature">440 г.</p>
-					<img class="card-img" src="img/set-01.webp" alt="Набор Мини-бокс">
+					<img class="card-img" src="./img/set-01.webp" alt="Набор Мини-бокс">
 					<div class="card-buy">
 						<p class="card-buy-price">880 ₽</p>
 						<button class="button" type="button">
@@ -468,7 +472,7 @@
 					<p class="card-title">Медиум-бокс</p>
 					<p class="card-description"></p>
 					<p class="card-feature">585 г.</p>
-					<img class="card-img" src="img/set-02.webp" alt="Набор Медиум-бокс">
+					<img class="card-img" src="./img/set-02.webp" alt="Набор Медиум-бокс">
 					<div class="card-buy">
 						<p class="card-buy-price">1040 ₽</p>
 						<button class="button" type="button">
@@ -484,7 +488,7 @@
 					<p class="card-title">Интересный</p>
 					<p class="card-description"></p>
 					<p class="card-feature">875 г.</p>
-					<img class="card-img" src="img/set-03.webp" alt="Набор Интересный">
+					<img class="card-img" src="./img/set-03.webp" alt="Набор Интересный">
 					<div class="card-buy">
 						<p class="card-buy-price">1500 ₽</p>
 						<button class="button" type="button">
@@ -500,7 +504,7 @@
 					<p class="card-title">Экстра-фиш</p>
 					<p class="card-description"></p>
 					<p class="card-feature">1015 г.</p>
-					<img class="card-img" src="img/set-04.webp" alt="Набор Экстра-фиш">
+					<img class="card-img" src="./img/set-04.webp" alt="Набор Экстра-фиш">
 					<div class="card-buy">
 						<p class="card-buy-price">2000 ₽</p>
 						<button class="button" type="button">
@@ -516,7 +520,7 @@
 					<p class="card-title">Семейный</p>
 					<p class="card-description"></p>
 					<p class="card-feature">1890 г.</p>
-					<img class="card-img" src="img/set-05.webp" alt="Набор Семейный">
+					<img class="card-img" src="./img/set-05.webp" alt="Набор Семейный">
 					<div class="card-buy">
 						<p class="card-buy-price">3440 ₽</p>
 						<button class="button" type="button">
@@ -541,7 +545,7 @@
 					<p class="card-title">Говядина в сычуаньском соусе</p>
 					<p class="card-description">Лапша, говядина, овощи, сычуаньский соус.</p>
 					<p class="card-feature">340 г.</p>
-					<img class="card-img" src="img/dish-01.webp" alt="Лапша с говядиной в сычуаньском соусе">
+					<img class="card-img" src="./img/dish-01.webp" alt="Лапша с говядиной в сычуаньском соусе">
 					<div class="card-buy">
 						<p class="card-buy-price">580 ₽</p>
 						<button class="button" type="button">
@@ -557,7 +561,7 @@
 					<p class="card-title">Креветки в соусе пад тай</p>
 					<p class="card-description">Рис, креветки, овощи, соус пад тай.</p>
 					<p class="card-feature">350 г.</p>
-					<img class="card-img" src="img/dish-02.webp" alt="Креветки в соусе пад тай">
+					<img class="card-img" src="./img/dish-02.webp" alt="Креветки в соусе пад тай">
 					<div class="card-buy">
 						<p class="card-buy-price">570 ₽</p>
 						<button class="button" type="button">
@@ -573,7 +577,7 @@
 					<p class="card-title">Хрустящий цыплёнок с тайским глейзом</p>
 					<p class="card-description">Курица, рис, соус тайский глейз, зелень.</p>
 					<p class="card-feature">380 г.</p>
-					<img class="card-img" src="img/dish-03.webp" alt="Хрустящий цыплёнок с тайским глейзом">
+					<img class="card-img" src="./img/dish-03.webp" alt="Хрустящий цыплёнок с тайским глейзом">
 					<div class="card-buy">
 						<p class="card-buy-price">630 ₽</p>
 						<button class="button" type="button">
@@ -589,7 +593,7 @@
 					<p class="card-title">Суп экзотичный</p>
 					<p class="card-description">Креветки, грибы, зелень, лимон.</p>
 					<p class="card-feature">345 г.</p>
-					<img class="card-img" src="img/dish-04.webp" alt="Суп экзотичный">
+					<img class="card-img" src="./img/dish-04.webp" alt="Суп экзотичный">
 					<div class="card-buy">
 						<p class="card-buy-price">480 ₽</p>
 						<button class="button" type="button">
@@ -605,7 +609,7 @@
 					<p class="card-title">Салат Цезарь с курицей</p>
 					<p class="card-description">Томаты-черри, курица, сухари, листья салата, соус Цезарь.</p>
 					<p class="card-feature">295 г.</p>
-					<img class="card-img" src="img/dish-05.webp" alt="Салат Цезарь с курицей">
+					<img class="card-img" src="./img/dish-05.webp" alt="Салат Цезарь с курицей">
 					<div class="card-buy">
 						<p class="card-buy-price">510 ₽</p>
 						<button class="button" type="button">
@@ -630,7 +634,7 @@
 					<p class="card-title">Чизкейк Нью-Йорк с манго</p>
 					<p class="card-description"></p>
 					<p class="card-feature">110 г.</p>
-					<img class="card-img" src="img/dessert-01.webp" alt="Чизкейк Нью-Йорк с манго">
+					<img class="card-img" src="./img/dessert-01.webp" alt="Чизкейк Нью-Йорк с манго">
 					<div class="card-buy">
 						<p class="card-buy-price">260 ₽</p>
 						<button class="button" type="button">
@@ -646,7 +650,7 @@
 					<p class="card-title">Чизкейк Шоколад</p>
 					<p class="card-description"></p>
 					<p class="card-feature">110 г.</p>
-					<img class="card-img" src="img/dessert-02.webp" alt="Чизкейк Шоколад">
+					<img class="card-img" src="./img/dessert-02.webp" alt="Чизкейк Шоколад">
 					<div class="card-buy">
 						<p class="card-buy-price">260 ₽</p>
 						<button class="button" type="button">
@@ -662,7 +666,7 @@
 					<p class="card-title">Чизкейк Лайм</p>
 					<p class="card-description"></p>
 					<p class="card-feature">110 г.</p>
-					<img class="card-img" src="img/dessert-03.webp" alt="Чизкейк Лайм">
+					<img class="card-img" src="./img/dessert-03.webp" alt="Чизкейк Лайм">
 					<div class="card-buy">
 						<p class="card-buy-price">260 ₽</p>
 						<button class="button" type="button">
@@ -678,7 +682,7 @@
 					<p class="card-title">Ролл Хрустящее наслаждение</p>
 					<p class="card-description">Банан, блинчик, манго, сыр, шоколад.</p>
 					<p class="card-feature">225 г.</p>
-					<img class="card-img" src="img/dessert-04.webp" alt="Ролл Хрустящее наслаждение">
+					<img class="card-img" src="./img/dessert-04.webp" alt="Ролл Хрустящее наслаждение">
 					<div class="card-buy">
 						<p class="card-buy-price">440 ₽</p>
 						<button class="button" type="button">
@@ -702,7 +706,7 @@
 					<p class="card-title">Морс Бодрящий лимон</p>
 					<p class="card-description"></p>
 					<p class="card-feature">900 мл.</p>
-					<img class="card-img" src="img/drink-01.webp" alt="Морс Бодрящий лимон">
+					<img class="card-img" src="./img/drink-01.webp" alt="Морс Бодрящий лимон">
 					<div class="card-buy">
 						<p class="card-buy-price">265 ₽</p>
 						<button class="button" type="button">
@@ -718,7 +722,7 @@
 					<p class="card-title">Морс Чёрная смородина</p>
 					<p class="card-description"></p>
 					<p class="card-feature">900 мл.</p>
-					<img class="card-img" src="img/drink-02.webp" alt="Морс Чёрная смородина">
+					<img class="card-img" src="./img/drink-02.webp" alt="Морс Чёрная смородина">
 					<div class="card-buy">
 						<p class="card-buy-price">265 ₽</p>
 						<button class="button" type="button">
@@ -734,7 +738,7 @@
 					<p class="card-title">Напиток Vinut Манго</p>
 					<p class="card-description"></p>
 					<p class="card-feature">330 мл.</p>
-					<img class="card-img" src="img/drink-03.webp" alt="Напиток Vinut Манго">
+					<img class="card-img" src="./img/drink-03.webp" alt="Напиток Vinut Манго">
 					<div class="card-buy">
 						<p class="card-buy-price">150 ₽</p>
 						<button class="button" type="button">
@@ -750,7 +754,7 @@
 					<p class="card-title">Вода Aqua Minerale без газа</p>
 					<p class="card-description"></p>
 					<p class="card-feature">500 мл.</p>
-					<img class="card-img" src="img/drink-04.webp" alt="Вода Aqua Minerale без газа">
+					<img class="card-img" src="./img/drink-04.webp" alt="Вода Aqua Minerale без газа">
 					<div class="card-buy">
 						<p class="card-buy-price">75 ₽</p>
 						<button class="button" type="button">
@@ -777,7 +781,7 @@
 					<p>Большой опыт, свежие продукты, профессиональные повара, чистая современная кухня – всё это о нас. Приходите покушать и убедитесь в этом сами!</p>
 				</div>
 
-				<img loading="lazy" src="img/about.webp" alt="Подача суши в заведении">
+				<img loading="lazy" src="./img/about.webp" alt="Подача суши в заведении">
 			</div>
 		</section>
 
@@ -814,7 +818,7 @@
 	<footer class="footer container">
 
 		<div class="footer-grid">
-			<a class="header-brand" href="/">Sushi</a>
+			<a class="header-brand" href="./">Sushi</a>
 
 
 			<ul class="navbar-nav">
@@ -895,7 +899,7 @@
 
 
 	<!-- Все скрипты сайта: -->
-	<!--<script defer src="/mitorun.js"></script>-->
+	<!--<script defer src="./mitorun.js"></script>-->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
 
